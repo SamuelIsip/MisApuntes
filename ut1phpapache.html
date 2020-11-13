@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apuntes</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="titulo">
+        <a href="index.html">MisApuntes<span>.com</span></a>
+      </div>
+    </header>
+    <div class="container">
+      <nav>
+        <p>Asignaturas</p>
+        <hr />
+        <div class="nav__JavaScript">
+          <div class="nav__titulo"><p>PHP:</p></div>
+          <div class="nav__indices">
+            <dl>
+              <dt>Unidad 1</dt>
+              <dd><a href="ut1phpgeneral.html">Teoría General</a></dd>
+              <dd><a href="ut1phpapache.html">Apache & PHP</a></dd>
+            </dl>
+          </div>
+        </div>
+        <hr />
+        <div class="nav__PHP">
+          <div class="nav__titulo"><p>JavaScript:</p></div>
+          <div class="nav__indices">
+            <dl>
+              <dt>Unidad 1</dt>
+              <dd><a href="#">Funciones</a></dd>
+            </dl>
+          </div>
+        </div>
+        <hr />
+      </nav>
+      <article>
+        <h1>APACHE y PHP</h1>
+        <section>
+          <h2>Instalación</h2>
+          <a
+            href="./archivos/18. Apache y PHP. Descarga, Instalacion y Configuracion.pdf"
+            target="black"
+            >Apache y PHP. Descarga, Instalacion y Configuracion</a
+          >
+          <p>
+            En la carpeta de Apache se encuentra htdocs, donde se alojarán
+            nuestros archivos, a los cuales se podrá acceder desde la web a
+            través del protocolo http.
+          </p>
+          <p>
+            El PHP instalado será de tipo Thread Safe, es decir, compilaciones
+            con capacidad multiproceso. Las Non Thread Safe solo permiten un
+            proceso. También tenderemos una carpeta con el módulo de PHP, al que
+            se apunta desde la configuración de Apache. En está carpeta
+            tendrémos las siguiente estructura:
+          </p>
+          <img src="./img/phpestruc.png" alt="PHP" />
+          <p>
+            php.ini es el archivo en el que configura PHP. Algunas directivas de
+            utilidad son:
+          </p>
+          <ul>
+            <li>
+              error_reporting = E_ALL & ~E_NOTICE & ~E_DEPRECATED (Mostrar todos
+              los errores excepto los Notice y Deprecated)
+            </li>
+            <li>display_errors = On (Mostrar errores o no)</li>
+            <li>
+              include_path = ".;C:\ServidorLocal\includes" (Seleccionamos rutas
+              a las que se irá a buscar los archivos solicitados con include o
+              require)
+            </li>
+            <li>
+              extension_dir = "C:\ServidorLocal\php7\ext\" (Ruta a donde se
+              buscarán los módulos a añadir en PHP, tales como el módulo de FTP)
+            </li>
+            <li>date.timezone = "Europe/Madrid" (Ajustamos la zona horaria)</li>
+          </ul>
+          <p>
+            Podemos cambiar directivas de configuración de forma dinámica a
+            través de código: <span>ini_set()</span> -> Establece el valor de la
+            directiva de configuración dada. La opción de configuración
+            mantendrá este nuevo valor durante la ejecución del script, y se
+            restaurará cuando acabe el mismo.
+          </p>
+          <img src="./img/phpini.png" alt="phpIni" />
+        </section>
+        <section></section>
+      </article>
+    </div>
+    <footer>
+      <div class="titulo">
+        <a href="index.html">MisApuntes<span>.com</span></a>
+      </div>
+    </footer>
+  </body>
+</html>

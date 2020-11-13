@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apuntes</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="titulo">
+        <a href="index.html">MisApuntes<span>.com</span></a>
+      </div>
+    </header>
+    <div class="container">
+      <nav>
+        <p>Asignaturas</p>
+        <hr />
+        <div class="nav__JavaScript">
+          <div class="nav__titulo"><p>PHP:</p></div>
+          <div class="nav__indices">
+            <dl>
+              <dt>Unidad 1</dt>
+              <dd><a href="ut1phpgeneral.html">Teoría General</a></dd>
+              <dd><a href="ut1phpapache.html">Apache & PHP</a></dd>
+            </dl>
+          </div>
+        </div>
+        <hr />
+        <div class="nav__PHP">
+          <div class="nav__titulo"><p>JavaScript:</p></div>
+          <div class="nav__indices">
+            <dl>
+              <dt>Unidad 1</dt>
+              <dd><a href="#">Funciones</a></dd>
+            </dl>
+          </div>
+        </div>
+        <hr />
+      </nav>
+      <article>
+        <h1>UNIDAD 1</h1>
+        <section>
+          <h2>¿Qué es PHP?</h2>
+          <p>
+            La explicación más popular es que PHP viene de
+            <span>“Hypertext Pre-processor”</span>. Otra explicación alternativa
+            es que las iniciales vienen de la versión temprana del programa, que
+            era llamada Personal Home Page Tools.
+          </p>
+          <p>
+            PHP es quizás el lenguaje más popular de programación web. Es usado
+            para mejorar páginas web. Con PHP, puedes hacer cosas como crear
+            páginas de inicio de sesión con usuario y contraseña, revisar
+            detalles de un formulario, crear foros, galerías de imágenes,
+            encuestas y mucho más. Si has estado en una página web que termina
+            en PHP, el autor ha escrito algo de código de programación para
+            darle vida a HTML. PHP es conocido como un lenguaje basado en
+            servidores. Esto es porque el PHP no se ejecuta en tu computadora,
+            sino en la computadora que visita la página. Los resultados son
+            brindados hacia ti y mostrados en tu navegador. Otros lenguajes de
+            programación que tal vez hayas escuchado son ASP, Python y Perl.
+          </p>
+        </section>
+        <section>
+          <h2>Interpretado/Compilado</h2>
+          <p>PHP es un lenguaje Interpretado.</p>
+          <p>
+            La principal diferencia entre un lenguaje compilado y uno
+            interpretado es que el lenguaje compilado requiere un paso adicional
+            antes de ser ejecutado, la compilación, que convierte el código que
+            escribes a lenguaje de máquina. Un lenguaje interpretado, por otro
+            lado, es convertido a lenguaje de máquina a medida que es ejecutado.
+          </p>
+          <p>
+            Los lenguajes de guiones tienen la ventaja de que no es necesario
+            traducir el código fuente original para ser ejecutados, lo que
+            aumenta su portabilidad. Si se necesita realizar alguna modificación
+            a un programa, se puede hacer en el momento. Por el contrario el
+            proceso de interpretación ofrece un peor rendimiento que las otras
+            alternativas.
+          </p>
+          <p>
+            Los lenguajes compilados a código nativo son los de mayor velocidad
+            de ejecución, pero tienen problemas en lo relativo a su integración
+            con el servidor web. Son programas de propósito general que no están
+            pensados para ejecutarse en el entorno de un servidor web. Por
+            ejemplo, no se reutilizan los procesos para atender a varias
+            peticiones: por cada petición que se haga al servidor web, se debe
+            ejecutar un nuevo proceso. Además los programas no son portables
+            entre distintas plataformas.
+          </p>
+          <p>
+            Los lenguajes compilados a código intermedio ofrecen un equilibrio
+            entre las dos opciones anteriores.
+          </p>
+        </section>
+        <section>
+          <h2>Modo de ejecución</h2>
+          <p>
+            Nosotros ejecutarémos PHP dentro del servidor como un módulo, pero
+            se podría ejecutar como CGI que es básicamente un ejecutable, que
+            puede ser en cualquier lenguaje, dentro del servidor.
+          </p>
+          <p>
+            <span>mod_php DSO (Dynamic Shared Object)</span>, es el modo más
+            antiguo de funcionamiento. Aquí PHP funciona como módulo de Apache y
+            lo que estamos permitiendo es que el mismo Apache pueda interpretar
+            scripts PHP, es decir, el interprete de PHP está embebido dentro del
+            propio proceso de Apache lo cual hace que la comunicación entre
+            Apache y PHP sea mejor y más efectiva. Además, implica que PHP solo
+            arranca, carga y configura una única vez (cuando Apache se inicia) y
+            puede almacenar información en todas las sesiones. Los scripts de
+            PHP son ejecutados directamente por el usuario nobody de Apache lo
+            cual puede causar problemas de permisos de archivos ya que los que
+            se suben al servidor pertenecen a este usuario nobody.
+          </p>
+          <p>
+            Ventajas: Es el modo más rápido de ejecución al no necesitar ningún
+            programa externo lo que lo hace bueno para sitios web que necesiten
+            alto rendimiento. La configuración PHP puede ser configurada sin
+            necesitar de archivos .htaccess
+          </p>
+          <p>
+            Desventajas: Cualquier cambio que hagamos en la configuración de PHP
+            (php.ini) requerirá reiniciar el servidor web. Apache se vuelve un
+            proceso más grande en el sistema y consume más recursos. Con este
+            modo, estamos cargando el interprete de PHP aún cuando estemos
+            generando contenido que tenga únicamente HTML.
+          </p>
+          <p>
+            <span>CGI Common Gateway Interface</span>
+            , define un estándar por el que un sevidor web (Apache, por
+            ejemplo), se comunica con una aplicación externa a él. Ojo, aquí el
+            significado de externa no es ‘otro servidor físico’, sino que la
+            ‘aplicación externa’ físicamente también está implementada en el
+            mismo servidor que el servidor web. En este modo de funcionamiento
+            PHP no se ejecuta dentro de Apache sino que lo hace ‘fuera de él’ en
+            un proceso que el mismo lanza (llamando al ejecutable de PHP, por
+            ejemplo) y que es reconocido como un proceso CGI. Es decir, ahora
+            seguimos teniendo Apache como servidor web, pero la petición es
+            realmente resuelta por un programa externo a él que puede estar
+            escrito en el mismo PHP, Perl, o cualquier otro lenguaje de
+            propósito general tanto interpretado como compilado.
+          </p>
+          <p>
+            Ventajas: La principal ventaja es que al ser un proceso externo al
+            servidor web, podemos tener un nivel de seguridad mayor. Suponiendo
+            que usamos PHP como CGI, si realizamos un cambio en la configuración
+            (php.ini), dicho cambio se hará efectivo con la siguiente petición
+            web.
+          </p>
+          <p>
+            Desventajas: respecto al modo de funcionamiento mod_php es la
+            velocidad con un rendimiento muy pobre. Además, las soluciones de
+            caché opcode no funcionan con CGI.
+          </p>
+        </section>
+        <section>
+          <h2>Ejecución</h2>
+          <ol>
+            <li>
+              <span>Capa de presentación:</span> la que ve el usuario (también
+              se la denomina «capa de usuario»), presenta el sistema al usuario,
+              le comunica la información y captura la información del usuario en
+              un mínimo de proceso (realiza un filtrado previo para comprobar
+              que no hay errores de formato). También es conocida como interfaz
+              gráfica y debe tener la característica de ser «amigable»
+              (entendible y fácil de usar) para el usuario. Esta capa se
+              comunica únicamente con la capa de negocio.
+            </li>
+            <li>
+              <span>Capa de negocio:</span> es donde residen los programas que
+              se ejecutan, se reciben las peticiones del usuario y se envían las
+              respuestas tras el proceso. Se denomina capa de negocio (e incluso
+              de lógica del negocio) porque es aquí donde se establecen todas
+              las reglas que deben cumplirse. Esta capa se comunica con la capa
+              de presentación, para recibir las solicitudes y presentar los
+              resultados, y con la capa de datos, para solicitar al gestor de
+              base de datos almacenar o recuperar datos de él. También se
+              consideran aquí los programas de aplicación.
+            </li>
+            <li>
+              <span>Capa de datos:</span> es donde residen los datos y es la
+              encargada de acceder a los mismos. Está formada por uno o más
+              gestores de bases de datos que realizan todo el almacenamiento de
+              datos, reciben solicitudes de almacenamiento o recuperación de
+              información desde la capa de negocio.
+            </li>
+          </ol>
+          <img src="./img/Esquema 3 Capas I.png" alt="Capas" />
+        </section>
+        <section>
+          <h2>Glosario</h2>
+          <ul>
+            <li>
+              <span>Aplicación Web:</span> Es una aplicación informática a la
+              que se accede mediante una interfaz web utilizando un navegador.
+              Sus ventajas es que no necesitan ser descargadas e instaladas pero
+              su desventaja es que siempre necesitan de conexión a internet.
+            </li>
+            <li>
+              <span>Cliente:</span> Son los que interactúan con la página web,
+              en el modelo cliente-servidor son los que solicitan funcionalidad
+              a los servidores.
+            </li>
+            <li><span>Servidor:</span> Proveen servicios a los clientes.</li>
+            <li>
+              <span>Framework:</span> Plataforma para el desarrollo de
+              aplicaciones, incluye librerías y metodologías, para ayudar a una
+              mayor rapidez en el desarrollo de código.
+            </li>
+            <li>
+              <span>HTML:</span> Hyper Text Markup Lenguage, es el lenguaje
+              básico para la creación de páginas web. Nos permite indicar la
+              estructura de nuestro documento. Creado por Tim Berners-Lee junto
+              al estándar de W3C.
+            </li>
+            <li>
+              <span>HTTP:</span> Hyper Text Trasfer Protocol, protocolo de
+              transferencia de hipertexto. Es el protocolo que utilizan los
+              clientes y servidores para comunicarse. Estándar del WRC.
+            </li>
+            <li><span>HTTPS:</span> Versión segura de HTTP.</li>
+            <li>
+              <span>IDE:</span> Integrated Development Eviorment, entorno de
+              desarrollo integrado. Programa que integra herramientas útiles
+              para programar, como editores, compiladores o control de
+              versiones. Se debe utilizar uno según: el resaltado de texto,
+              completado automático, comprobación de errores, generación de
+              código, ejecución y depuración, gestión de versiones.
+            </li>
+            <li>
+              <span>Protocolo:</span> Conjunto de reglas que se establecen en el
+              proceso de comunicación entre dos sistemas.
+            </li>
+            <li>
+              <span>W3C:</span> World Wide Web Consortium, organismo que elabora
+              y mantiene varios de los estándares más importantes en Internet,
+              como HTTP o el HTML.
+            </li>
+            <li>
+              <span>Web estática/dinámica:</span> Las páginas estáticas solo
+              muestran información mientras que las dinámicas permiten
+              interactuar con ellas, comentarios, comprar, etc.
+            </li>
+          </ul>
+        </section>
+        <br />
+      </article>
+    </div>
+    <footer>
+      <div class="titulo">
+        <a href="index.html">MisApuntes<span>.com</span></a>
+      </div>
+    </footer>
+  </body>
+</html>
