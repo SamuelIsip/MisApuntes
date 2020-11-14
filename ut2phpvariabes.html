@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apuntes</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/estilotabla.css" />
+  </head>
+  <body>
+    <header>
+      <div class="titulo">
+        <a href="index.html">MisApuntes<span>.com</span></a>
+      </div>
+    </header>
+    <div class="container">
+      <nav>
+        <p>Asignaturas</p>
+        <hr />
+        <div class="nav__PHP">
+          <div class="nav__titulo"><p>PHP:</p></div>
+          <div class="nav__indices">
+            <dl>
+              <dt>Unidad 1</dt>
+              <dd><a href="ut1phpgeneral.html">Teoría General</a></dd>
+              <dd><a href="ut1phpapache.html">Apache & PHP</a></dd>
+              <dt>Unidad 2</dt>
+              <dd><a href="ut2phpvariabes.html">Variables & Constantes</a></dd>
+              <dd><a href="ut2phpgetpost.html">Métodos GET y POST</a></dd>
+            </dl>
+          </div>
+        </div>
+        <hr />
+        <div class="nav__JS">
+          <div class="nav__titulo"><p>JavaScript:</p></div>
+          <div class="nav__indices">
+            <dl>
+              <dt>Unidad 1</dt>
+              <dd><a href="#">Funciones</a></dd>
+            </dl>
+          </div>
+        </div>
+        <hr />
+        <div class="nav__CSS">
+          <div class="nav__titulo"><p>CSS:</p></div>
+          <div class="nav__indices">
+            <dl>
+              <dt>Unidad 1</dt>
+              <dd><a href="#">Font</a></dd>
+            </dl>
+          </div>
+        </div>
+        <hr />
+      </nav>
+      <article>
+        <h1>Tipos de Datos & Manejo de Variables & Constantes Predefinidas</h1>
+        <section>
+          <h2>Tipos de Datos</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Tipo</th>
+                <th>Descripción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>integer</td>
+                <td>Números enteros</td>
+              </tr>
+              <tr>
+                <td>float</td>
+                <td>Números reales en coma flotante</td>
+              </tr>
+              <tr>
+                <td>string</td>
+                <td>Cadena de caracteres</td>
+              </tr>
+              <tr>
+                <td>boolean</td>
+                <td>Buleanos, TRUE o FALSE</td>
+              </tr>
+              <tr>
+                <td>array</td>
+                <td>Colección de elementos identificados</td>
+              </tr>
+              <tr>
+                <td>object</td>
+                <td>Es una instancia de una clase</td>
+              </tr>
+              <tr>
+                <td>callable</td>
+                <td>Para las funciones de callback</td>
+              </tr>
+              <tr>
+                <td>null</td>
+                <td>Valores variables no asignados</td>
+              </tr>
+              <tr>
+                <td>resource</td>
+                <td>Representa recuros externos</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section>
+          <p>
+            <span>isset</span> — Determina si una variable está definida y no es
+            NULL
+          </p>
+          <p>
+            <span>Variables booleanas </span>TURE Y NULL no se muestran en php,
+            se asocian a variables pero solo representan 0, 1, null, etc. TRUE
+            -> 1 FALSE -> 0
+          </p>
+          <img src="./img/convbool.png" alt="Booleanos" />
+        </section>
+        <section>
+          <h2>Manejo de Variables</h2>
+          <a href="https://www.php.net/manual/es/ref.var.php" target="black"
+            >Funciones Manejo de Variables</a
+          >
+          <br />
+          <a href="./archivos/Operadores.pdf" target="black"
+            >Operadores Aritméticos</a
+          >
+
+          <p>
+            <span>Diferencia entre comillas dobles y simples</span>: Las
+            comillas dobles permiten introducir dentro variables y las toma por
+            su valor. Las comillas simples toman la variable como literal, como
+            string.
+          </p>
+          <dl>
+            <dt>Variables Globales</dt>
+            <dd>
+              Son las variables declaradas como "global" y son accesible en todo
+              el fichero, si se declaran fuera de las funciones son globales por
+              defecto.
+            </dd>
+            <dt>Variables Locales</dt>
+            <dd>
+              Son las variables declaradas dentro de una función, y accesibles
+              solo en estas, no son accesibles fuera de la función.
+            </dd>
+            <dt>Variables SuperGlobales</dt>
+            <dd>
+              Las variables súper globales son -a nivel ámbito- variables
+              globales y se diferencian de éstas en que: • No son definidas por
+              el programador, sino que vienen incorporadas al lenguaje; • No
+              necesitan ser llamadas mediante global;
+              <ul>
+                <li>$GLOBALS</li>
+                <li>$_SERVER</li>
+                <li>$_GET</li>
+                <li>$_POST</li>
+                <li>$_FILES</li>
+                <li>$_COOKIE</li>
+                <li>$_SESSION</li>
+                <li>$_REQUEST</li>
+                <li>$_ENV</li>
+              </ul>
+            </dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Tipos de variables</h2>
+          <p>Hay 4 tipos de variables:</p>
+          <dl>
+            <dt>Variables:</dt>
+            <dd>Variables Convencionales</dd>
+            <dt>Variables estáticas:</dt>
+            <dd>
+              Aquellas variables locales que conservan su valor tras la
+              ejecución de la función o método que las declara.
+              <br />
+              <img src="./img/static.png" alt="Variables estáticas" />
+            </dd>
+            <dt>Variables de variables</dt>
+            <dd>
+              Las variables variables son una forma de definir variables
+              -locales o globales- en tiempo de ejecución y resultan ideales en
+              instrucciones iterativas. Son variables cuyo nombre, se define en
+              tiempo de ejecución dejando disponible una nueva variable.
+              <img src="./img/vardevar.png" alt="Variables de variables" />
+            </dd>
+            <dt>Variables Constantes</dt>
+            <dd>
+              Se pueden definr con "define()" o con "const". Con define se crean
+              constantes para clases y con const son constantes globales.
+              <br />
+              define('FOO', 1);
+              <br />
+              const FOO = 1;
+            </dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Constantes Predefinidas</h2>
+          <a
+            href="https://www.php.net/manual/es/language.constants.predefined.php"
+            >Constantes mágicas</a
+          >
+          <br />
+          <a
+            href="./archivos/Constantes predefinidas del núcleo.pdf"
+            target="black"
+            >Constantes predefinidad del núcleo</a
+          >
+        </section>
+      </article>
+      <br />
+      <br />
+      <br />
+    </div>
+    <footer>
+      <div class="titulo">
+        <a href="index.html">MisApuntes<span>.com</span></a>
+      </div>
+    </footer>
+  </body>
+</html>
