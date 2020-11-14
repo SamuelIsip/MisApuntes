@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apuntes</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="titulo">
+        <a href="index.html">MisApuntes<span>.com</span></a>
+      </div>
+    </header>
+    <div class="container">
+      <nav>
+        <p>Asignaturas</p>
+        <hr />
+        <div class="nav__PHP">
+          <div class="nav__titulo"><p>PHP:</p></div>
+          <div class="nav__indices">
+            <dl>
+              <dt>Unidad 1</dt>
+              <dd><a href="ut1phpgeneral.html">Teoría General</a></dd>
+              <dd><a href="ut1phpapache.html">Apache & PHP</a></dd>
+              <dt>Unidad 2</dt>
+              <dd><a href="ut2phpvariabes.html">Variables & Constantes</a></dd>
+              <dd><a href="ut2phpgetpost.html">Métodos GET y POST</a></dd>
+              <dt>Unidad 3</dt>
+              <dd>
+                <a href="ut2phpfunarrfech.html">Funciones Arrays y Fechas</a>
+              </dd>
+              <dt>Unidad 4</dt>
+              <dd>
+                <a href="ut2phpclases.html">Objetos y Clases</a>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <hr />
+        <div class="nav__JS">
+          <div class="nav__titulo"><p>JavaScript:</p></div>
+          <div class="nav__indices">
+            <dl>
+              <dt>Unidad 1</dt>
+              <dd><a href="#">Funciones</a></dd>
+            </dl>
+          </div>
+        </div>
+        <hr />
+        <div class="nav__CSS">
+          <div class="nav__titulo"><p>CSS:</p></div>
+          <div class="nav__indices">
+            <dl>
+              <dt>Unidad 1</dt>
+              <dd><a href="#">Font</a></dd>
+            </dl>
+          </div>
+        </div>
+        <hr />
+      </nav>
+      <article>
+        <h1>Objetos & Clases</h1>
+
+        <section>
+          <h2>Visibilidad de las variables</h2>
+          <img src="./img/visibilidad.png" alt="Visibilidad" />
+          <p>
+            La visibilidad de una propiedad, un método o (a partir de PHP 7.1.0)
+            una constante se puede definir anteponiendo a su declaración una de
+            las palabras reservadas public, protected o private. A los miembros
+            de clase declarados como 'public' se puede acceder desde donde sea;
+            a los miembros declarados como 'protected', solo desde la misma
+            clase, mediante clases heredadas o desde la clase padre. A los
+            miembros declarados como 'private' únicamente se puede acceder desde
+            la clase que los definió.
+          </p>
+          <h3>Llamadas desde objetos:</h3>
+          <p>
+            $objuno = new uno; //cuando es constructor por defecto se permite
+            llamar sin () -> new uno;
+          </p>
+          <p>
+            A variables o métodos publicos se llama con el objeto.
+            $obj->$metodo();
+          </p>
+          <p>
+            A variables o métodos estáticos se llama con: nombreClase::$metodo()
+          </p>
+          <p>
+            Llamar a variable de la clase padre, desde la hija: parent::m1uno();
+          </p>
+          <p>
+            Los setters y getters se llaman: $objuno->var1=7; Se utilizan
+            variables de variables.
+          </p>
+          <img src="./img/getset.png" alt="Get" />
+          <p>
+            Los destructores __destruct() se invocan al eliminar una clase,
+            puede ser con exito().
+          </p>
+          <p>
+            Los "traits" se utilizan para simular la herencia múltiple. Se
+            inicializan cuando se crea un objeto de la clase que hereda.
+          </p>
+          <img src="./img/traits.png" alt="Traits" />
+          <br />
+          <a href="./archivos/Funciones de Clases.pdf" target="black"
+            >Funciones de Clases</a
+          >
+        </section>
+        <section>
+          <h3>Include/Require</h3>
+          <p>La sentencia include incluye y evalúa el archivo especificado.</p>
+          <p>
+            Include_once - > Incluye y evalúa el fichero solo una vez, no
+            permite que se repita.
+          </p>
+          <p>
+            require es idéntico a include excepto que en caso de fallo producirá
+            un error fatal de nivel E_COMPILE_ERROR. En otras palabras, éste
+            detiene el script mientras que include sólo emitirá una advertencia
+            (E_WARNING) lo cual permite continuar el script.
+          </p>
+          <p>
+            La sentencia require_once es idéntica a require excepto que PHP
+            verificará si el archivo ya ha sido incluido y si es así, no se
+            incluye (require) de nuevo.
+          </p>
+          <p>
+            A los archivos php que se destinan a inclusión, se ponen con
+            extensión nombre.inc.php.
+          </p>
+          <p>
+            Poner el mismo nombre de clase y fichero sirve a la hora de utilizar
+            __autoload, este hace un include de la clase si esta se llama igual
+            que la variable; Cada nuevo objeto se carga un nuevo include, aunque
+            sea de la misma clase. Para que solo se incluya una vez, se pone en
+            el __autoload, un include_once.
+          </p>
+          <p>*Recorder include_path de php.ini</p>
+          <img src="./img/autoload.png" alt="Autoload" />
+        </section>
+      </article>
+    </div>
+    <footer>
+      <div class="titulo">
+        <a href="index.html">MisApuntes<span>.com</span></a>
+      </div>
+    </footer>
+  </body>
+</html>

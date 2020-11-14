@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apuntes</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="titulo">
+        <a href="index.html">MisApuntes<span>.com</span></a>
+      </div>
+    </header>
+    <div class="container">
+      <nav>
+        <p>Asignaturas</p>
+        <hr />
+        <div class="nav__PHP">
+          <div class="nav__titulo"><p>PHP:</p></div>
+          <div class="nav__indices">
+            <dl>
+              <dt>Unidad 1</dt>
+              <dd><a href="ut1phpgeneral.html">Teoría General</a></dd>
+              <dd><a href="ut1phpapache.html">Apache & PHP</a></dd>
+              <dt>Unidad 2</dt>
+              <dd><a href="ut2phpvariabes.html">Variables & Constantes</a></dd>
+              <dd><a href="ut2phpgetpost.html">Métodos GET y POST</a></dd>
+              <dd>
+                <a href="ut2phpfunarrfech.html">Funciones Arrays y Fechas</a>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <hr />
+        <div class="nav__JS">
+          <div class="nav__titulo"><p>JavaScript:</p></div>
+          <div class="nav__indices">
+            <dl>
+              <dt>Unidad 1</dt>
+              <dd><a href="#">Funciones</a></dd>
+            </dl>
+          </div>
+        </div>
+        <hr />
+        <div class="nav__CSS">
+          <div class="nav__titulo"><p>CSS:</p></div>
+          <div class="nav__indices">
+            <dl>
+              <dt>Unidad 1</dt>
+              <dd><a href="#">Font</a></dd>
+            </dl>
+          </div>
+        </div>
+        <hr />
+      </nav>
+      <article>
+        <h1>Funciones & Arrays & Fechas</h1>
+        <section>
+          <h2>Funciones</h2>
+          <p>
+            A las funciones se les pueden pasar parámetros y recogerlos de
+            distintas formas.
+          </p>
+          <dl>
+            <dt>Funciones por referencia</dt>
+            <dd>
+              <img src="./img/funref.png" alt="Referencia" />
+              <p>
+                Las variables pasadas guardaran el valor que obtengan dentro de
+                la función para tenerlo fuera también.
+              </p>
+              <p>
+                Suma(7,8, &$resutlado); -> A partir de la versión 5 en adelante
+                ya no funciona, por motivos de seguridad (cualquiera que llame
+                una función puede recoger datos de ella), la referencia se pone
+                solo en la función, no en la llamada.
+              </p>
+            </dd>
+            <dt>Funciones con menos o más parámetros</dt>
+            <dd>
+              <p>
+                En los parámetros de la función se pueden inicializar variables,
+                por lo tanto al llamarla se pueden pasar menos valores que
+                parámetros, solo si los demás están inicializados: suma(7);
+                function suma($v1,$v2=8){ echo $v2 }. Se pueden pasár más
+                valores y no dará error: suma(7,9,9); function suma($v1,$v2){
+                echo $v1; }
+              </p>
+            </dd>
+            <a
+              href="https://www.php.net/manual/es/book.funchand.php"
+              target="black"
+              >Funciones de manejo de funciones</a
+            >
+          </dl>
+        </section>
+        <section>
+          <h2>Arrays</h2>
+          <p>
+            Las posiciones del array no son secuenciales ya que los datos
+            almacenados pueden ser de distintos tipos. Las posiciones en el
+            array las establece el momento en el que se introducen los datos.
+          </p>
+          <dl>
+            <dt>Escalares</dt>
+            <dd>
+              Cuando el índice es numérico entero. El índice no está asociado a
+              la posición. $var1 = array(2,3,5,7,8) ->Escalar, les da índices
+              secuenciales;
+            </dd>
+            <dt>Asociativos</dt>
+            <dd>
+              Lo que contiene se asocia a una palabra que colocamos como índice,
+              ej: Super-globales. También puede manejar variables de distinto
+              tipo. $var1 = array(2=>’s’,3=>4,5=>’b’) ->Asociativa, se le da un
+              índice y valor a este.
+            </dd>
+          </dl>
+          <p>
+            Si se combina escalar con asociativo, se da índice escalar hasta que
+            llega al asociativo, el siguiente a ese es el número mayor que el
+            asociativo.
+          </p>
+          <a href="https://www.php.net/manual/es/ref.array.php" target="black"
+            >Funciones de arrays</a
+          >
+          <p>Funciones interesantes de strings:</p>
+          <a href="https://www.php.net/manual/es/ref.strings.php" target="black"
+            >Funciones de strings</a
+          >
+          <p>str_split($frase); -> Convierte un string en array.</p>
+          <p>
+            substr($num1, $v1+1); -> Dividir una cadena desde esa pos y todo
+            derecha
+          </p>
+          <p>
+            strpos($num1, " "); -> Encontrar primera coincidencia desde izq.
+          </p>
+          <p>
+            strrpos($num1, " ");-> Encontrar primera coincidencia desde drch.
+          </p>
+          <p>
+            Nl2br()-> Hace saltos de línea después de cada string. Convirtiendo
+            /r/n en <br />
+          </p>
+          <p>
+            preg_replace("/([!,.])/", "", $word) — Realiza una búsqueda y
+            sustitución de una expresión regular.
+          </p>
+          <p>
+            str_replace — Reemplaza todas las apariciones del string buscado con
+            el string de reemplazo (sin expresiones regulares).
+          </p>
+          <p>
+            printf() -- Se necesita la etiqueta html &lt;pre&gt;
+            printf("%'*".$num_ast."s%".$espacio_num."u\n","",$valor);
+          </p>
+          <h3>Arrays Bidimensionales</h3>
+          <p>
+            $arr[][]; -> Posición por defecto 0,0. $arr[][]; -> Posición 1,0. Si
+            se pone [0][] es posición 0,1. *Prevalece filas, pero si
+            establecemos fila se prevalece columna. Al recorrer los arrays
+            bidimensionales se hace con doble foreach, uno para filas y otros
+            para columnas.
+          </p>
+          <img src="./img/operadoresarray.png" alt="Operadores Arrays" />
+          <h3>Formularios</h3>
+          <p>
+            Dentro de formularios, en elementos de selección multiple, se pueden
+            usar arrays para pasar sus valores. En el name del elemento se pone
+            ‘nomArray[]’. Los índices serán escalares, pero se pueden poner
+            asociativos.
+          </p>
+          <p>
+            Saber que método de envío se utiliza. $_SERVER['REQUEST_METHOD']
+          </p>
+          <h4>Datos por URL</h4>
+          <p>
+            $_SERVER['QUERY_STRING'] Si existe, la cadena de la consulta de la
+            petición de la página.
+          </p>
+          <p>
+            Parse_str($_SERVER['QUERY_STRING']); -> divide el string en las
+            variables. Devuelve void, las variables ya las crea el, se llaman
+            igual que en la URL.
+          </p>
+          <p>Urlencode()-> Codificar URL.</p>
+          <p>Urldecode()-> Decodificar URL.</p>
+          <p>header — Enviar encabezado sin formato HTTP</p>
+          <p>
+            header("refresh:1; url=ejercicio19.php?crono=$crono&start=Start");
+          </p>
+          <p>header("Location: http://www.example.com/");</p>
+        </section>
+        <section>
+          <h2>Fecha/Hora</h2>
+          <a
+            href="https://www.php.net/manual/es/ref.datetime.php"
+            target="black"
+            >Funciones de Fecha/Hora</a
+          >
+          <br />
+          <img src="./img/funcfecha.png" alt="Funciones fechas" />
+          <br />
+          <img src="./img/datetime.png" alt="Date" />
+          <br />
+          <a
+            href="https://www.php.net/manual/es/ref.calendar.php"
+            target="black"
+            >Funciones de Calendario</a
+          >
+          <p>
+            cal_days_in_month — Devolver el número de días de un mes para un año
+            y un calendario dados
+          </p>
+        </section>
+      </article>
+    </div>
+    <footer>
+      <div class="titulo">
+        <a href="index.html">MisApuntes<span>.com</span></a>
+      </div>
+    </footer>
+  </body>
+</html>
