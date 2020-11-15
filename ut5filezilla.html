@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apuntes</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="titulo">
+        <a href="index.html">MisApuntes<span>.com</span></a>
+      </div>
+    </header>
+    <div class="container">
+      <nav>
+        <p>Asignaturas</p>
+        <hr />
+        <div class="nav__PHP">
+          <div class="nav__titulo"><p>PHP:</p></div>
+          <div class="nav__indices">
+            <dl>
+              <dt>Unidad 1</dt>
+              <dd><a href="ut1phpgeneral.html">Teoría General</a></dd>
+              <dd><a href="ut1phpapache.html">Apache & PHP</a></dd>
+              <dt>Unidad 2</dt>
+              <dd><a href="ut2phpvariabes.html">Variables & Constantes</a></dd>
+              <dd><a href="ut2phpgetpost.html">Métodos GET y POST</a></dd>
+              <dt>Unidad 3</dt>
+              <dd>
+                <a href="ut3phpfunarrfech.html">Funciones Arrays y Fechas</a>
+              </dd>
+              <dt>Unidad 4</dt>
+              <dd>
+                <a href="ut4phpclases.html">Objetos y Clases</a>
+              </dd>
+              <dd><a href="ut4phpserializ.html">Serialización</a></dd>
+              <dt>Unidad 5</dt>
+              <dd><a href="ut5filezilla.html">FileZilla</a></dd>
+            </dl>
+          </div>
+        </div>
+        <hr />
+        <div class="nav__JS">
+          <div class="nav__titulo"><p>JavaScript:</p></div>
+          <div class="nav__indices">
+            <dl>
+              <dt>Unidad 1</dt>
+              <dd><a href="#">Funciones</a></dd>
+            </dl>
+          </div>
+        </div>
+        <hr />
+        <div class="nav__CSS">
+          <div class="nav__titulo"><p>CSS:</p></div>
+          <div class="nav__indices">
+            <dl>
+              <dt>Unidad 1</dt>
+              <dd><a href="#">Font</a></dd>
+            </dl>
+          </div>
+        </div>
+        <hr />
+      </nav>
+      <article>
+        <h1>FileZilla</h1>
+        <section>
+          <h2>¿Qué es un servidor FTP?</h2>
+          <p>
+            Conceptualmente un servidor FTP no difiere en nada de un servidor
+            HTTP. Las diferencias entre los diversos tipos de servidores
+            estriban en los programas que usan –software de servidor– en el tipo
+            de petición que aceptan y en el protocolo que requieren las
+            peticiones que atiende. En el caso de Apache, se trata de un
+            servidor HTTP porque sólo acepta peticiones a través de ese
+            protocolo. Al hablar de servidores FTP nos referimos a aquellos que
+            únicamente aceptan peticiones realizadas por medio del proto- colo
+            conocido como FTP (File Transfer Protocol).
+          </p>
+          <a
+            href="./archivos/08 Instalación del Servidor FileZilla_GA.pdf"
+            target="black"
+            >Instalación del Servidor FileZilla</a
+          >
+          <ul>
+            <li>
+              Un cliente FTP. El cual se encarga de conectarse a un servidor FTP
+              para descargar o subir archivos.
+            </li>
+            <li>
+              Un servidor FTP. Se encarga de procesar las peticiones de los
+              clientes FTP, permitiéndoles descargar o subir archivos desde él.
+            </li>
+          </ul>
+          <p>
+            Para conectarnos a un servidor FTP, y así poder realizar consultas
+            en él, necesitaremos los siguientes datos:
+          </p>
+          <ul>
+            <li>
+              Nombre del Servidor. Es la IP o Nombre del Servidor FTP al cual
+              nos hemos de conectar, tal como: 65.134.10.5 o ftp.billysite.net
+            </li>
+            <li>Puerto. Número del puerto del servidor. Por defecto es 21.</li>
+            <li>
+              Cuenta de Usuario. Es el nombre de la cuenta de usario que se nos
+              ha asignado. Hay que asegurarse que cuenta con los permisos
+              necesarios para subir o bajar archivos. De no tener una cuenta de
+              usuario se puede acceder como usuario anónimo utilizando el nombre
+              de usuario anonymous.
+            </li>
+            <li>
+              Clave de acceso. Es nuestra contraseña de cuenta de usuario. De
+              acceder como usuario anónimo colocaremos como clave nuestro
+              correo-e a manera de cortesía.
+            </li>
+          </ul>
+          <p>
+            Nosotros utilizarémos el protocolo FTP a través de PHP del servidor
+            de Apache, con el código correspondiente. Así evitamos tener que
+            cambiar en la url el protocolo de HTTP a FTP.
+          </p>
+        </section>
+      </article>
+    </div>
+    <footer>
+      <div class="titulo">
+        <a href="index.html">MisApuntes<span>.com</span></a>
+      </div>
+    </footer>
+  </body>
+</html>
